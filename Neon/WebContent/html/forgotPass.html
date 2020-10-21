@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forgot Password Page</title>
+    <link rel="stylesheet" type="text/css" href="..//css/style.css">
+    <link rel="stylesheet" type="text/css" href="..//css/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;500&family=Recursive:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style type="text/css">
+	body{
+		margin:0;
+		padding:0;
+		background: #fafafa;
+	}
+	#captcha
+	{
+		position: relative;
+		height: 50px;
+		width: 150px;
+		background: #fff;
+		border: 1px solid rgba(0,0,0,0.5);
+		text-align: center;
+		/*left: 50%;*/
+		/*transform:translateX(-50%);*/
+		color: #017bf5;
+		outline: none;
+		font-size:25px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 15px;
+	} 
+    input[type="text"],
+    input[type="password"]
+    {
+        margin: 0px auto 15px auto;
+    }
+	.submit{
+        margin-bottom:28px;
+        width:120px;
+        height:32px;
+        background:#f44336;
+        border: none;
+        border-radius: 2px;
+        color:#fff;
+        font-family: sans-serif;
+        font-weight: 500;
+        text-transform:uppercase;
+        transition:0.2s ease;
+        cursor:pointer;
+    }
+    .submit:hover,
+    .submit:focus
+    {
+        background: #ff5722;
+        transition:0.2s ease;
+        margin-top: 1px;
+    }
+</style>
+</head>
+<body style="background-color:white; text-align: center;">
+
+<div class="header">
+<div class="container">
+   <div class="navbar">
+    <div class="logo">
+        <a href="index.html"><img src="..//img/logo2.jpg" width="125px"></a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+             <li><a href="../jsp/qwerty2.jsp">Sign Up</a></li>
+            <li><a href="../signIn/qwerty.jsp">Sign In</a></li>         <li><img src="..//img/cart.png" width="30px" height="30px"><a href="cart.html">Cart</a></li>
+            
+
+        </ul>
+    </nav>
+    
+   </div>
+   </div>
+</div>
+
+<div class="center">
+    <h1>Forgot password?</h1>
+    <div class="col-md-5 forgot-form">
+        <h3>Security Question</h3>
+        <br><br>
+        <p>Please enter the name of your primary school</p><br>
+        <label>School Name</label> <input type="text"><br><br>
+
+
+        <form name="f1">
+        	<input id="captcha" type="text" name="t1" value="" readonly="" />
+        </form>
+
+
+        <label>Enter the characters shown in the image </label><input type="text">
+    </div>
+    <h2>Reset Password</h2>
+    <br><br>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name ="psw" required><br>
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name ="psw-repeat" required><br>
+    <button type="button" class="submit">OK</button>
+    <a href="index.html">Back to the homepage</a>
+
+    </label>
+</div>
+
+<div class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h1 class="logo-text"><span>Neon</span></h1>
+                <p>India's no. 1 online fashion destination justifies its fashion relevance 
+                    by bringing something new and chic to the table on the daily.
+                     Fashion trends seem to change at lightning speed, yet the Neon
+                      shopping app has managed to keep up without any hiccups.
+                </p>
+                <div class="contact">
+                    <span><i class="fas fa-phone"></i>&nbsp; 123-456-789</span>
+                    <span><i class="fas fa-envelope"></i>&nbsp; info@neonfashion.com</span>
+                </div>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <br>
+                <ul>
+                    <a href="cancel.html"><li>Cancellation & Returns</li></a>
+                    <a href="terms&condition.html"><li>Terms Of Use</li></a>
+                    <a href="summary.html"><li>FAQ</li></a>
+                </ul>
+            </div>
+            <div class="footer-section contact-form">
+                <h2>Contact us</h2>
+                <br>
+                <form action="index_sample.html" method="post">
+                    <input type="email" name="email" class="text-input contact-input size" placeholder="Enter your email here...">
+                    <br>
+                    <textarea name="message" rows="5" class="text-input contact-input size" placeholder="Your message..."></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-big contact-btn">
+                        <i class="fas fa-paper-plane"></i> 
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy;  Designed by Neon Developers
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    function fun1() {
+        var no="1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        var x=no[Math.floor(Math.random()*no.length)];
+        for (var i=0;i<6;i++) {
+            x=x+no[Math.floor(Math.random()*no.length)];
+        }
+        f1.t1.value=x;
+    }
+    window.onload=fun1();
+    </script>
+    </body>
+    </html>
+
